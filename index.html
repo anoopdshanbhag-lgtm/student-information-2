@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anoop D Shanbhag | Student Profile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- EDIT BUTTON -->
+  <button class="edit-toggle" id="editToggle" onclick="toggleEdit()">
+    <i class="fas fa-pen"></i> Edit Profile
+  </button>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="avatar-wrapper">
+        <div class="avatar" id="avatarDisplay">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <label class="avatar-edit-btn" id="avatarEditBtn" style="display:none;">
+          <i class="fas fa-camera"></i>
+          <input type="file" accept="image/*" onchange="changePhoto(event)" hidden/>
+        </label>
+      </div>
+      <h1 class="student-name" contenteditable="false" id="studentName">Anoop D Shanbhag</h1>
+      <p class="student-tag">Electronics & Communication Engineering &nbsp;|&nbsp; 2nd Semester</p>
+      <p class="usn-badge">USN: 1BI25EC017</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- PERSONAL INFO -->
+    <section class="card" id="personalInfo">
+      <div class="card-header">
+        <i class="fas fa-id-card"></i>
+        <h2>Personal Information</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="label"><i class="fas fa-birthday-cake"></i> Date of Birth</span>
+          <span class="value" contenteditable="false" id="dob">15 / 10 / 2007</span>
+        </div>
+        <div class="info-item">
+          <span class="label"><i class="fas fa-phone"></i> Contact Number</span>
+          <span class="value" contenteditable="false" id="phone">9071784445</span>
+        </div>
+        <div class="info-item">
+          <span class="label"><i class="fas fa-envelope"></i> Email ID</span>
+          <span class="value" contenteditable="false" id="email">anoopdshanbhag@gmail.com</span>
+        </div>
+        <div class="info-item">
+          <span class="label"><i class="fas fa-university"></i> Department</span>
+          <span class="value" contenteditable="false" id="dept">Electronics & Communication Engineering</span>
+        </div>
+        <div class="info-item">
+          <span class="label"><i class="fas fa-layer-group"></i> Semester</span>
+          <span class="value" contenteditable="false" id="sem">2nd Semester</span>
+        </div>
+        <div class="info-item">
+          <span class="label"><i class="fas fa-map-marker-alt"></i> Address</span>
+          <span class="value" contenteditable="false" id="address">Click Edit to add your address</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTENDANCE -->
+    <section class="card">
+      <div class="card-header">
+        <i class="fas fa-calendar-check"></i>
+        <h2>Attendance Details</h2>
+      </div>
+      <div class="attendance-wrapper">
+        <div class="attendance-circle">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50" class="track"/>
+            <circle cx="60" cy="60" r="50" class="progress" id="attendanceCircle"/>
+          </svg>
+          <div class="circle-text">
+            <span class="percent" contenteditable="false" id="attendancePercent">85</span>
+            <span class="pct-sign">%</span>
+          </div>
+        </div>
+        <div class="attendance-stats">
+          <div class="stat-box">
+            <span class="stat-num" contenteditable="false" id="classesHeld">120</span>
+            <span class="stat-label">Classes Held</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" contenteditable="false" id="classesAttended">102</span>
+            <span class="stat-label">Classes Attended</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" contenteditable="false" id="classesAbsent">18</span>
+            <span class="stat-label">Absent</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC MARKS -->
+    <section class="card">
+      <div class="card-header">
+        <i class="fas fa-chart-bar"></i>
+        <h2>Academic Marks / CGPA</h2>
+      </div>
+      <div class="cgpa-display">
+        <div class="cgpa-circle">
+          <span contenteditable="false" id="cgpa">8.5</span>
+          <small>CGPA</small>
+        </div>
+      </div>
+      <div class="marks-table-wrapper">
+        <table class="marks-table" id="marksTable">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Internal</th>
+              <th>External</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="marksBody">
+            <tr>
+              <td contenteditable="false">Mathematics</td>
+              <td contenteditable="false">28</td>
+              <td contenteditable="false">62</td>
+              <td contenteditable="false">90</td>
+            </tr>
+            <tr>
+              <td contenteditable="false">Physics</td>
+              <td contenteditable="false">25</td>
+              <td contenteditable="false">58</td>
+              <td contenteditable="false">83</td>
+            </tr>
+            <tr>
+              <td contenteditable="false">Basic Electronics</td>
+              <td contenteditable="false">30</td>
+              <td contenteditable="false">65</td>
+              <td contenteditable="false">95</td>
+            </tr>
+            <tr>
+              <td contenteditable="false">Programming in C</td>
+              <td contenteditable="false">27</td>
+              <td contenteditable="false">60</td>
+              <td contenteditable="false">87</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="add-row-btn" id="addRowBtn" style="display:none;" onclick="addMarksRow()">
+          <i class="fas fa-plus"></i> Add Subject
+        </button>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="card">
+      <div class="card-header">
+        <i class="fas fa-trophy"></i>
+        <h2>Achievements & Certifications</h2>
+      </div>
+      <ul class="achievements-list" id="achievementsList">
+        <li>
+          <i class="fas fa-medal"></i>
+          <span contenteditable="false">Click Edit to add your achievements</span>
+          <button class="delete-btn" onclick="deleteItem(this)" style="display:none;"><i class="fas fa-times"></i></button>
+        </li>
+        <li>
+          <i class="fas fa-certificate"></i>
+          <span contenteditable="false">Add your certifications here</span>
+          <button class="delete-btn" onclick="deleteItem(this)" style="display:none;"><i class="fas fa-times"></i></button>
+        </li>
+      </ul>
+      <button class="add-btn" id="addAchievementBtn" style="display:none;" onclick="addAchievement()">
+        <i class="fas fa-plus"></i> Add Achievement
+      </button>
+    </section>
+
+    <!-- PLACEMENT -->
+    <section class="card">
+      <div class="card-header">
+        <i class="fas fa-briefcase"></i>
+        <h2>Placement Details</h2>
+      </div>
+      <div class="placement-box">
+        <div class="placement-status">
+          <span class="status-badge" id="placementStatus">Not Applicable (2nd Sem)</span>
+        </div>
+        <p class="placement-note" contenteditable="false" id="placementNote">Placement details will be updated in the final year. Currently focusing on building strong fundamentals.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Bangalore Institute of Technology &nbsp;|&nbsp; Dept. of ECE &nbsp;|&nbsp; <span contenteditable="false" id="footerYear">2025–26</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
